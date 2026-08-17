@@ -14,3 +14,8 @@ and as a base for upstream PRs.
   a new integration driver for the same OpenComputers fork, adding support
   for [Create: Crafts & Additions](https://github.com/mrh0/createaddition)'
   Modular Accumulator block as an OC component (`cca_accumulator`).
+- [`opencomputers-rebooted-create-pulley-piston-driver/`](opencomputers-rebooted-create-pulley-piston-driver/) —
+  five new integration drivers for the same OpenComputers fork, adding
+  direct block-adjacent support for vanilla Create's Elevator Pulley,
+  Mechanical Bearing, Rope Pulley, Hose Pulley, and Mechanical Piston
+  blocks.

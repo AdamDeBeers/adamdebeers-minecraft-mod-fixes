@@ -1,0 +1,30 @@
+diff --git a/src/main/java/li/cil/oc/integration/create/CreateDrivers.java b/src/main/java/li/cil/oc/integration/create/CreateDrivers.java
+index e0c5ced85..bcf1712eb 100644
+--- a/src/main/java/li/cil/oc/integration/create/CreateDrivers.java
++++ b/src/main/java/li/cil/oc/integration/create/CreateDrivers.java
+@@ -1,6 +1,11 @@
+ package li.cil.oc.integration.create;
+ 
++import com.simibubi.create.content.contraptions.bearing.MechanicalBearingBlockEntity;
+ import com.simibubi.create.content.contraptions.chassis.StickerBlockEntity;
++import com.simibubi.create.content.contraptions.elevator.ElevatorPulleyBlockEntity;
++import com.simibubi.create.content.contraptions.piston.MechanicalPistonBlockEntity;
++import com.simibubi.create.content.contraptions.pulley.PulleyBlockEntity;
++import com.simibubi.create.content.fluids.hosePulley.HosePulleyBlockEntity;
+ import com.simibubi.create.content.kinetics.gauge.SpeedGaugeBlockEntity;
+ import com.simibubi.create.content.kinetics.gauge.StressGaugeBlockEntity;
+ import com.simibubi.create.content.kinetics.motor.CreativeMotorBlockEntity;
+@@ -33,6 +38,13 @@ public static void register() {
+         Driver.add(new CreateBlockDriver<>(StressGaugeBlockEntity.class, CreateKineticEnvironments.StressGauge::new));
+         Driver.add(new CreateBlockDriver<>(SequencedGearshiftBlockEntity.class, CreateKineticEnvironments.SequencedGearshift::new));
+ 
++        Driver.add(new CreateBlockDriver<>(ElevatorPulleyBlockEntity.class, CreateContraptionEnvironments.ElevatorPulley::new));
++        Driver.add(new CreateBlockDriver<>(MechanicalBearingBlockEntity.class, CreateContraptionEnvironments.MechanicalBearing::new));
++        Driver.add(new CreateBlockDriver<>(PulleyBlockEntity.class,
++                blockEntity -> !(blockEntity instanceof ElevatorPulleyBlockEntity), CreateContraptionEnvironments.RopePulley::new));
++        Driver.add(new CreateBlockDriver<>(HosePulleyBlockEntity.class, CreateContraptionEnvironments.HosePulley::new));
++        Driver.add(new CreateBlockDriver<>(MechanicalPistonBlockEntity.class, CreateContraptionEnvironments.MechanicalPiston::new));
++
+         Driver.add(new CreateBlockDriver<>(StickerBlockEntity.class, CreateControlEnvironments.Sticker::new));
+         Driver.add(new CreateBlockDriver<>(SignalBlockEntity.class, CreateControlEnvironments.Signal::new));
+         Driver.add(new CreateBlockDriver<>(TrackObserverBlockEntity.class, CreateControlEnvironments.TrackObserver::new));
