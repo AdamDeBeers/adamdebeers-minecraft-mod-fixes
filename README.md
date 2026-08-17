@@ -1,0 +1,12 @@
+# adamdebeers-minecraft-mod-fixes
+
+Patched source files for bugs found while debugging Minecraft mods, kept here
+for reference and as a base for upstream PRs.
+
+## Contents
+
+- [`opencomputers-rebooted-ae2-fixes/`](opencomputers-rebooted-ae2-fixes/) —
+  four fixes for [CaitlynMainer/OpenComputers](https://github.com/CaitlynMainer/OpenComputers)
+  (branch `main-MC1.21.1`, "OpenComputers: Rebooted" for NeoForge 1.21.1) that
+  were breaking the Applied Energistics 2 integration (`me_controller`,
+  `inventory_controller`).
