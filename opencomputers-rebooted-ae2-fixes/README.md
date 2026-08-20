@@ -109,3 +109,12 @@ After all four fixes: `me_controller` exposes the full `NetworkControl` API
 (`getItemsInNetwork`, `getCraftables`, `getCpus`, `getFluidsInNetwork`,
 `store`, power stats) alongside the energy convenience methods, and
 `inventory_controller` reads against AE2 blocks no longer crash.
+
+## Note
+
+[AdamDeBeers/OpenComputers-ADB](https://github.com/AdamDeBeers/OpenComputers-ADB)
+(branch `feature/ae2-networkcontrol-fix`, off `main-MC1.21.1`) carries a
+narrower, driver-local workaround for the same `staticAnalyze` bug described
+in fix #3 above, instead of patching the shared `Callbacks.scala`/
+`CallbackWrapper.scala` machinery — see that repo's `DriverController.java`
+and `DriverBlockInterface.java`.
